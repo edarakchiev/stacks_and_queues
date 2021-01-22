@@ -1,0 +1,17 @@
+from collections import deque
+
+END_COMMAND = "End"
+PAID_COMMAND = "Paid"
+
+deque_data = deque()
+
+while True:
+    data = input()
+    if data == PAID_COMMAND:
+        while deque_data:
+            print(deque_data.popleft())
+    elif data == END_COMMAND:
+        print(f"{len(deque_data)} people remaining.")
+        break
+    else:
+        deque_data.append(data)
