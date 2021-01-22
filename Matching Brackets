@@ -1,0 +1,9 @@
+data = input()
+brackets_index = []
+
+for i in range(len(data)):
+    if data[i] == "(":
+        brackets_index.append(i)
+    elif data[i] == ")":
+        start_index = brackets_index.pop()
+        print(data[start_index:i+1])
