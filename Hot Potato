@@ -1,0 +1,17 @@
+from collections import deque
+
+players = list(input().split())
+step = int(input())
+d_players = deque(players)
+
+counter = 0
+
+while len(d_players) > 1:
+    counter += 1
+    current_player = d_players.popleft()
+    if counter == step:
+        print(f"Removed {current_player}")
+        counter = 0
+    else:
+        d_players.append(current_player)
+print(f"Last is {d_players.popleft()}")
