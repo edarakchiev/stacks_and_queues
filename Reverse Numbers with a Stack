@@ -1,0 +1,5 @@
+data = list(input().split())
+stack = [int(el) for el in data]
+
+while stack:
+    print(stack.pop(), end=" ")
